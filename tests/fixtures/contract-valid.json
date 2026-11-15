@@ -1,0 +1,219 @@
+{
+  "contract_version": "c01-v1",
+  "spec_version": "v2026-11-14-c00-a1",
+  "analysis_version": "synthetic-v1",
+  "candidates": [
+    {
+      "id": "c1",
+      "project": "influy",
+      "revision": "r1",
+      "author": "analyst",
+      "state": "VERIFIED",
+      "disposition": "active",
+      "claim_ids": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "assessment_ids": [
+        "a1"
+      ],
+      "verification_ids": [
+        "v1"
+      ],
+      "note_ids": [],
+      "decision_ids": [
+        "ARCH-05",
+        "ARCH-06",
+        "NOTE-01"
+      ],
+      "history": [
+        {
+          "from": "DISCOVERED",
+          "to": "INGESTED"
+        },
+        {
+          "from": "INGESTED",
+          "to": "MINED"
+        },
+        {
+          "from": "MINED",
+          "to": "LINKED"
+        },
+        {
+          "from": "LINKED",
+          "to": "INVESTIGATED"
+        },
+        {
+          "from": "INVESTIGATED",
+          "to": "VERIFIED"
+        }
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "f1",
+      "candidate_id": "c1",
+      "revision": "r1",
+      "kind": "recorded_fact",
+      "text": "Synthetic action and context.",
+      "author": "analyst",
+      "actor": "fixture-actor",
+      "evidence_ids": [
+        "e1"
+      ],
+      "core_aspects": [
+        "action",
+        "contribution",
+        "judgment",
+        "situation"
+      ]
+    },
+    {
+      "id": "f2",
+      "candidate_id": "c1",
+      "revision": "r1",
+      "kind": "ai_inference",
+      "text": "Synthetic interpretation.",
+      "author": "analyst",
+      "actor": "AI",
+      "evidence_ids": [
+        "e1"
+      ],
+      "core_aspects": [],
+      "uncertainty": "Synthetic assumption.",
+      "alternative_explanations": [
+        "Alternative synthetic explanation."
+      ]
+    },
+    {
+      "id": "f3",
+      "candidate_id": "c1",
+      "revision": "r1",
+      "kind": "user_confirmation",
+      "text": "Synthetic retrospective.",
+      "author": "analyst",
+      "actor": "fixture-user",
+      "evidence_ids": [
+        "e1"
+      ],
+      "core_aspects": [],
+      "question": "Synthetic question?",
+      "answer_verbatim": "Synthetic answer.",
+      "confirmed_at": "2026-11-14T00:00:00+09:00"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e1",
+      "source_id": "synthetic:1",
+      "origin": "synthetic",
+      "location": "fixture:source:line1",
+      "raw_path": "tests/fixtures/source.txt",
+      "version": "fixture-v1",
+      "sha256": "8972722fd0a94b6d472091361837e1cea76072d65ba1065f95581049046dcfac",
+      "author": "fixture-actor",
+      "created_at": "2026-11-14T00:00:00+09:00",
+      "collected_at": "2026-11-14T00:00:00+09:00"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "a1",
+      "candidate_id": "c1",
+      "revision": "r1",
+      "author": "analyst",
+      "scores": [
+        {
+          "criterion": "judgment",
+          "max": 25,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "distinctiveness",
+          "max": 20,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "contribution",
+          "max": 20,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "importance",
+          "max": 10,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "execution",
+          "max": 10,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "evidence",
+          "max": 10,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        },
+        {
+          "criterion": "reflection",
+          "max": 5,
+          "score": 0,
+          "reason": "Synthetic zero, no real assessment.",
+          "evidence_claim_ids": [
+            "f1"
+          ]
+        }
+      ],
+      "total": 0
+    }
+  ],
+  "verifications": [
+    {
+      "id": "v1",
+      "candidate_id": "c1",
+      "reviewer": "independent-fixture-reviewer",
+      "reviewed_at": "2026-11-14T00:00:00+09:00",
+      "revision_digest": "7490f50482c3a75129669d5469ebee079de2f5c130734050bd67a573c3d944b4",
+      "status": "passed",
+      "claim_ids": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "evidence_ids": [
+        "e1"
+      ],
+      "issues": [],
+      "originals_reopened": true,
+      "attribution_checked": true,
+      "counterevidence_checked": true,
+      "followups_checked": true
+    }
+  ],
+  "notes": []
+}

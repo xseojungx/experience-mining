@@ -1,0 +1,50 @@
+# --- Personal data: never published -------------------------------------
+# Raw GitHub/ChatGPT exports, synced sources, generated notes.
+data/
+sources/
+vault/
+
+# Operational state: collected PR data, analysis results, run logs.
+# Only the schema and migrations are part of the tool.
+state/*
+!state/schema.sql
+!state/migrations/
+checkpoints/
+results/
+keyword_changes.txt
+
+# Approval records and reproduction diffs of spec revisions (reference
+# personal conversation IDs). The canonical spec files themselves are tracked.
+spec/revisions/
+
+# One-off pilot scripts that call an external API on personal conversations.
+tools/jev_*.py
+
+# --- Secrets ------------------------------------------------------------
+.env
+.env.*
+*.pem
+
+# --- Databases ----------------------------------------------------------
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+
+# --- Python ---------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# --- Editors / OS / local agent settings --------------------------------
+.DS_Store
+.idea/
+.vscode/
+.claude/settings.local.json
