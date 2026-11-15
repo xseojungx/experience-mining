@@ -29,8 +29,7 @@ packages = ["tools", "tools.chatgpt_pipeline"]
 target-version = "py39"
 line-length = 120
 src = ["."]
-# tools/jev_*.py are local one-off pilot scripts kept out of the published repo.
-extend-exclude = ["data", "results", "checkpoints", "state", "sources", "vault", "tools/jev_*.py"]
+extend-exclude = ["data", "results", "checkpoints", "state", "sources", "vault"]
 
 [tool.ruff.lint]
 # E9: syntax errors, F: pyflakes (unused/undefined names), B: bugbear, I: import order.
@@ -48,7 +47,6 @@ known-first-party = ["tools"]
 [tool.mypy]
 python_version = "3.9"
 files = ["tools"]
-exclude = ["tools/jev_"]
 namespace_packages = true
 explicit_package_bases = true
 warn_unused_configs = true
@@ -63,7 +61,10 @@ check_untyped_defs = false
 module = ["tools.work_queue", "tools.audit_state"]
 disable_error_code = ["no-redef", "attr-defined", "import-not-found"]
 
-# Script-only entry points (no package-mode import path).
+# Script-only entry points (no package-mode import path). The jev_* pilots load
+# sibling scripts by file path (importlib.util.spec_from_file_location).
 [[tool.mypy.overrides]]
-module = ["tools.audit_pr_details", "tools.sync_chatgpt_index", "tools.finalize_chatgpt_body_review"]
+module = ["tools.audit_pr_details", "tools.sync_chatgpt_index", "tools.finalize_chatgpt_body_review",
+          "tools.jev_nondev_pilot", "tools.jev_project_classify", "tools.jev_project_loose",
+          "tools.jev_project_loose_v2"]
 ignore_errors = true

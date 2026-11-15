@@ -124,6 +124,7 @@ tools/
   collect_*.py, recover_*.py   GitHub PR 수집기 (큐 토큰 없이는 실행 안 됨)
   migrate_*.py           운영 DB 마이그레이션 (백업·무결성·복원)
   chatgpt_pipeline/      ChatGPT 내보내기 분류·검색
+  jev_*.py               외부 분류 API로 대화를 프로젝트·카테고리별로 나누는 일회성 실험 스크립트
 tests/                   unittest, 합성 fixture만 사용
 state/schema.sql, state/migrations/   DB 스키마 (실제 DB는 공개하지 않음)
 spec/MASTER_PLAN.md, spec/NOTE_TEMPLATES.md, AGENTS.md
@@ -148,7 +149,7 @@ python3 -m unittest discover -s tests -v      # 테스트
 
 - 수집한 PR·리뷰 원본, ChatGPT 내보내기(`data/`), 운영 DB와 상태 파일(`state/*`, 스키마 제외)
 - 분석 결과·체크포인트·명세 개정 승인 기록(`results/`, `checkpoints/`, `spec/revisions/`)
-- 외부 API를 호출하는 일회성 실험 스크립트(`tools/jev_*.py`)와 `.env`
+- API 키가 든 `.env`. `tools/jev_*.py`는 공개하지만, 이 스크립트가 쓰는 키와 결과는 `results/` 아래에 있어 함께 제외됩니다.
 
 ## 한계와 로드맵
 

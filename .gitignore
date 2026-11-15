@@ -17,9 +17,6 @@ keyword_changes.txt
 # personal conversation IDs). The canonical spec files themselves are tracked.
 spec/revisions/
 
-# One-off pilot scripts that call an external API on personal conversations.
-tools/jev_*.py
-
 # --- Secrets ------------------------------------------------------------
 .env
 .env.*
